@@ -1,0 +1,35 @@
+<style>
+  #dispId{
+    margin: 10px;
+    width: 270px;
+    height: 32px;
+  }
+  #rastB{
+    background-color:#424242;
+  }
+  agm-map {
+    margin: 20px;
+    height: 450px;
+  }
+</style>
+<div>
+    <form #f="ngForm" (submit)="form_disp(f)">
+        <input id="dispId" type="text" ngModel name="dispId" placeholder="Código do Dispositivo">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" id="rastB">
+            Rastrear Bicicleta
+        </button>
+    </form>
+
+    <div *ngFor= "let d of dispositivos| async" >
+      <div *ngIf="(d.dispId == item)" [hidden]="!(d.dispId == item)">
+        <agm-map [latitude]="d.latitude" [longitude]="d.longitude">
+            <agm-marker [latitude]="d.latitude" [longitude]="d.longitude">
+            </agm-marker>
+        </agm-map>
+      </div>
+      <div *ngIf="!(d.dispId == item)" [hidden]="(d.dispId == item)">
+          <agm-map [latitude]="-8" [longitude]="-35">
+          </agm-map>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<style>
+  #iconeT{
+   width: 10%;
+   height: 10%;
+  }
+</style>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row" style="background-color: #9ccc65;">
+      <!-- Title -->
+      <span class="mdl-layout-title" style="color:#424242">
+        <img id="iconeT" src="/assets/images/green-turtle-icon.png">
+        Turtle Lock
+      </span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" [routerLink]= "['/']" style="color:#424242">Cadastrar</a>
+        <a class="mdl-navigation__link" [routerLink]= "['/mapa']" style="color:#424242">Mapa</a>
+      </nav>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
