@@ -23,8 +23,8 @@ export class CadastroComponent implements OnInit {
       {
         email: f.controls.email.value,
         dispId: f.controls.dispId.value,
-        latitude: 0,
-        longitude: 0
+        latitude: -8.059010760184787,
+        longitude: -34.872234793572446
       }
       ).then((t: any) => console.log('dados gravados: ' + t.key)),
       (e: any) => console.log(e.message);
